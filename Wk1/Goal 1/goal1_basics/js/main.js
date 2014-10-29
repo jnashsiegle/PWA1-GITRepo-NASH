@@ -283,6 +283,9 @@ console.log('------ conditionals ----------');
         a true or false boolean
     - conditions can be used just about anywhere, not just in conditionals and loops
 */
+var myVar = 5 > 3;
+console.log("is 5 greater than 3: ", myVar);
+
 
 
 
@@ -300,7 +303,10 @@ console.log('------ conditionals ----------');
             //block of code or ‘actions’
          };
 */
-
+if (5 > 3 ){
+    //execute code here
+    console.log("'5 > 3', True!");
+}
 
 
 /*
@@ -315,7 +321,18 @@ console.log('------ conditionals ----------');
 
     // == performs a loose check of two values
 
-
+if ("1" == 1){
+    console.log("'1' == 1, is True!");
+}
+if (1 == 1){
+    console.log("1 == 1, is True!");
+}
+if ("1" === 1){
+    console.log("'1' === 1, is True!");
+}
+if ("1" !== 1){
+    console.log("'1' !== 1, is True!");
+}
 
 /* ==============================================================
     if - else statements (allows only for one option)
@@ -328,16 +345,48 @@ console.log('------ conditionals ----------');
 
  ================================================================
  */
+if ("a" < "b"){
+    //True run code
+console.log("a is less than b");
 
+}else {
+    //False run code
+console.log("if-else: the 'IF' statement is false");
+}
 
+if ("a" === "b"){
+    //True run code
+    console.log("a equals b");
 
+}else {
+    //False run code
+    console.log("if-else: the 'IF' statement is false");
+}
     //if - else if - else (allows for multiple options)
-
+if ("a" === "b"){
+    console.log("a is less than b");
+}else if ("a" < "c"){
+    console.log("a is less than c");
+}else if ("a" < "d"){
+    console.log("a is less than d");
+}else{
+    console.log("if-else if: all others returned false");
+}
 
 
     //nested conditional statement
 
+if ("a" !== "a"){
 
+    if ("b" === "b"){
+    console.log("In nested if-else / b === b: True");
+    }else{
+        //execute block of code if the matching IF statement is true
+    }
+
+}else{
+    console.log("nested conditional: 1st IF returned False");
+}
 
 /* ==============================================================
  LOGICAL operators
@@ -357,16 +406,30 @@ console.log('------ conditionals ----------');
 
     //AND logical operator
 
+if ( (1 === 1) && ("hi" === "hi") ){
+    console.log('&& logical operator: both sides are true');
+}
 
     //OR logical operator
 
+if ( (1 === 1) || ("hi" === "no") ){
+    console.log('|| logical operator: one side is true');
+}
 
     // ! NOT logical operator
 
-
+if ( !(1 === 1) || ("hi" === "no") ){
+    console.log('! NOT logical operator: left is true converted to NOT');
+}else{
+    console.log("! NOT logical operator: both sides = false");
+}
     // all logical operators with order of operations
 
-
+if ( 5 < 2 || ( 1 === 1 && ! (2 == "2" || 5 < 2))){
+    console.log('logical operator: true');
+}else{
+    console.log('logical operator: false');
+}
 
 /*******************************************
  STUDENT ACTIVITY 3:
@@ -380,8 +443,25 @@ console.log('------ conditionals ----------');
     1. learn if - else
  ********************************************/
 
+/*var weather = "cloudy";
 
 
+if (weather === "sunny") {
+    bobsMood = "happy";
+
+}else{
+    bobsMood = "sad";
+
+} */
+
+var weather = "Cloudy";
+
+if (weather === "sunny"){
+    bobsMood = "happy";
+}else{
+    bobsMood = "sad";
+}
+console.log("If - Else weather: ", bobsMood);
 
 /*******************************************
  STUDENT ACTIVITY 4:
@@ -400,8 +480,33 @@ console.log('------ conditionals ----------');
  ********************************************/
 
 
+var weather = "Cloudy";
+var waves = 10;
+
+if (weather === "sunny") {
+    if (waves === 10) {
+        bobsMood = "pumped";
+    } else if ((waves <= 9) && (waves >= 5)) {
+        bobsMood = "mellow";
+    } else {
+        bobsMood = "bummed";
+    }
+
+}else if (weather === "overcast"){
+    if ((waves < 10) && (waves >= 7)){
+        bobsMood = "jackedUp";
+    }else if ((waves <= 6 ) && (waves >= 3)){
+        bobsMood = "totally bummed";
+    }else{
+        bobsMood = "not happy";
+    }
+
+}else{
+    bobsMood = "sad";
+    }
 
 
+console.log("Nested weather: ", bobsMood);
 /*
     BREAKING A TERNARY CONDITIONAL DOWN TO INDIVIDUAL PIECES
     - as an example
@@ -422,7 +527,13 @@ console.log('------ conditionals ----------');
     - : = false (perform the new statement after the :)
  */
 
+var weather = "Sunny";
+var mood = (weather === "Sunny" ? "happy" : "sad");
+console.log(mood);
 
+
+var smile = "true";
+console.log("I am " + ( smile === "true" ? "happy" : "sad" ) + "!!");
 
 /*******************************************
  STUDENT ACTIVITY 5:
@@ -435,6 +546,12 @@ console.log('------ conditionals ----------');
         - else student1 = 'sad'
     4.  console.log the results
  ********************************************/
+
+var temp = 80;
+var weather = "Sunny";
+var student1 = (weather === "Sunny" ? "happy" : ((temp >= 80) ? "content" : "sad" ));
+
+console.log("nested terniary weather: ", student1);
 
 
 
