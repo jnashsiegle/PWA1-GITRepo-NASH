@@ -111,7 +111,7 @@ console.log("Example 5: ", testString4);
 
 
 // numbers (definition, concatenation +, math, numbers & strings)
-console.log('------ numbers ----------');
+console.log('------ numbers ----------' + "Complete");
 
 var y = 123e5;   //12300000
 var z = 123-5;   //0.0123
@@ -251,7 +251,7 @@ console.log('------ arrays ----------');
 
 
  // conditionals: (definition, indexing, math, if, if-else, if-else if, ternary)
-console.log('------ conditionals ----------');
+console.log('------ conditionals ----------' + "Complete");
 
  /*
 
@@ -556,7 +556,7 @@ console.log("nested terniary weather: ", student1);
 
 
 // Functions: (definition, whitespace, invocation, arguments, returns)
-console.log('------Functions ----------');
+console.log('------Functions ----------' + "Complete");
 
 
 /*
@@ -596,10 +596,18 @@ console.log('------Functions ----------');
 
      - type the below as an example
         functionName();
- *****************************
+ *****************************  */
 
+var myCtr = 1;
 
+var myCounter = function(){
+    myCtr++;
+    console.log("counter = ", myCtr);
 
+};
+
+myCounter();          //changes global var myCtr to 2
+myCounter();         //so this adds 1 to 2 when it goes through the function a second time
 
  /*
     function literal: passing data into a function
@@ -636,7 +644,14 @@ console.log('------Functions ----------');
     - items inside our function we call on these variables.. such as:
  */
 
+var value1 = 1;
+var value2 = 2;
 
+var myFn = function(var1, var2) {
+
+    console.log("function number: ", var1 +  var2);
+};
+myFn(value1, value2);
 
 
 /*******************************************
@@ -652,7 +667,17 @@ console.log('------Functions ----------');
  ********************************************/
 
 
+var myCtr = 1;
 
+var myCounter = function(newct){
+    var myCtr = 50;
+    myCtr += newct;
+    console.log("counter = ", myCtr);
+
+};
+
+myCounter(5);          //
+myCounter(2);
 
 /*******************************************
  function literal: returning values
@@ -664,7 +689,13 @@ console.log('------Functions ----------');
     - the called function should be assigned to a variable (i.e name - see below)
  ********************************************/
 
+var myFn = function(){
+    return "James Bond";
 
+};
+
+var name = myFn();
+console.log(name);
 
     // if a return gives back no value, it instead returns “undefined”
     // this technique is commonly used to end a function early, during execution
@@ -683,8 +714,20 @@ console.log('------Functions ----------');
  ********************************************/
 
 
+var myCtr = 1;
+
+var myCounter = function(newct){
+   // var myCtr = 50;
+    myCtr += newct;
+    return myCtr;
 
 
+};
+
+var cnt = myCounter(5);
+console.log("counter = ", cnt);//
+var cnt = myCounter(2);
+console.log("counter = ", cnt);
 /*******************************************
  STUDENT ACTIVITY 8:
 
@@ -695,3 +738,35 @@ console.log('------Functions ----------');
  5. console.log the Results
  ********************************************/
 
+var value3 = "overcast";
+var value4= 5;
+
+var moodFn = function(weather3, waves1) {
+
+    if (weather3 === "Sunny") {
+        if (waves1 === 10) {
+            bobsMood = "pumped";
+        } else if ((waves1 <= 9) && (waves1 >= 5)) {
+            bobsMood = "mellow";
+        } else {
+            bobsMood = "bummed";
+        }
+
+    } else if (weather3 === "overcast") {
+        if ((waves1 < 10) && (waves1 >= 7)) {
+            bobsMood = "jackedUp";
+        } else if ((waves1 <= 6 ) && (waves1 >= 3)) {
+            bobsMood = "totally bummed";
+        } else {
+            bobsMood = "not happy";
+        }
+
+    } else {
+        bobsMood = "sad";
+    }
+    return bobsMood;
+
+};
+
+var moodType = moodFn(value3, value4);
+console.log("Nested weather in a function: ", moodType);
