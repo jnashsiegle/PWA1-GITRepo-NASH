@@ -1,7 +1,7 @@
 /*
-     Name:
-     Date:
-     Class & Section:  PWA1-####
+     Name: Jana Nash-Siegle
+     Date:  10/29/2014
+     Class & Section:  PWA1-1411-01
      Comments: "Goal 1: Review of WPF"
  */
 
@@ -49,70 +49,150 @@
     - legal   var name007;
 */
 // variables
-console.log('------ variables ----------');
+console.log('------ variables ---------- ' + 'Complete');
 
     //example 1: variables defined properly
+// var name = "james";
+// var course = "PWA-1";
+// var month = 3;
+
 
 
     //example 2: variables not defined will = "undefined"
 
+// var name, course, month;
 
     //example 3: a mix of variables defined and not defined
 
+//var name;
+//var course = "PWA-1";
+//var month;
+//console.log("Name: " + name + " / Course: " +  course + " / Month:" + month);
 
     //example 4: declaring multiple variables at once w/ same value
+
+// var a = b = c = d = 10;
+// console.log("a: " + a + " / b: " + b + " / c: " + c + " / d: " + d )
 
 
 
 // string (definition, concatenation, escape character)
-console.log('------ strings ----------');
+console.log('------ strings ----------' + "Complete");
+
+/*var name = "James Bond";
+console.log(name);
 
     //basic string
 
+var testString = "He's in PWA-1.";
+console.log("Example 1: ", testString);
 
     //string w/ escape characters " \ "
 
+var testString1 = "I need some \"quotes\" to be here.";
+console.log("Example 2: ", testString1);
+
+var testString2 = 'He\'s in PWA-1';
+console.log("Example 3: ", testString2);
 
     //string w/ escape characters and mixed single/double quotes
+var testString3 = 'He\'s in ' + '"PWA1"';
+console.log(testString3);
+
 
 
     //this example shows that all the "phase" vars above were overwritten
 
+var num = 3;
+var testString4 = 'He\'s in PWA1 ' + num;
+console.log("Example 5: ", testString4);
+
+*/
 
 
 // numbers (definition, concatenation +, math, numbers & strings)
 console.log('------ numbers ----------');
 
+var y = 123e5;   //12300000
+var z = 123-5;   //0.0123
+
     // arithmetic operators:  +, -, /, *, % (modulo)
 
 
     //basic math
+var counter = 10;
+console.log("basic math: ", counter +1);
+console.log(counter);
 
 
     //quick operations with "assignment operator" +=, -=, *=, /=, %=
     //one example below, can show more examples with other assignment operators
 
+var num1 = 10;
+var num2 = 5;
+
+num1 += num2;                 //this is the same as
+//num1 = num1 + num2;           //this
+console.log("+=: ", num1);
+
 
     //increment or decrement numbers by 1 with ++ or --
 
+var myNum = 5;
+console.log("myNum = ", myNum);
+
+myNum++;                    //adds 1 to myNum
+console.log("myNum = ", myNum);
+
+myNum--;                    //subtracts 1 to myNum++
+console.log("myNum = ", myNum);
+
     //this decrements right before it is being used
+
+var num = 10;
+--num;
+console.log("--counter: ", num);
+
 
     //this decrements after it is used
 
+//num--;
+//console.log("counter--: ", num);     //subtracted 1 from  --counter
+
+
     //comment out the above example
     //this decrements after it is being used as well
+console.log("counter--: ", num--);            //it doesn't decrement the num 10 until instructed via console.log
+console.log("counter" , num);                 //this adds a decrement by saying that when this step is taken
+                                              //num-- is 9 subtract 1 so num is now 8
+
 
 
     //add a number to a string is always a string
 
+var myStr = "6" + 2;
+console.log("Number + String is myStr: ", myStr);
+
 
     //other math operations will result in a number
+
+var myStr1 = "6" /2;
+console.log("Number / Strings (or *) is always a number and  is myStr1: ", myStr1);
+
+
 
 
     //order of operations: ( ), *, /, +, -
 
+var num4 = 4 + (6 * 5 - 10) / 5;
+console.log("num4: ", num4);
+
 
     //modulo example
+var num5 = 10;
+var num6 = 3;
+console.log("Remainder: ", num5%num6);
+
 
 
 // arrays: (definition, indexing, getter/setter)
