@@ -1,7 +1,7 @@
 /*
-     Name:
-     Date:
-     Class & Section:  PWA1-####
+     Name:Jana Nash-Siegle
+     Date:10/30/2014
+     Class & Section:  PWA1-1410-01
      Comments: "Goal 2: JavaScript Practice"
  */
 
