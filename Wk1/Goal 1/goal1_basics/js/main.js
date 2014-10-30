@@ -196,7 +196,7 @@ console.log("Remainder: ", num5%num6);
 
 
 // arrays: (definition, indexing, getter/setter)
-console.log('------ arrays ----------');
+console.log('------ arrays ----------'  + "Complete");
 
 /*
     BREAKING AN ARRAY DOWN TO INDIVIDUAL PIECES
@@ -213,6 +213,8 @@ console.log('------ arrays ----------');
  */
    var myArr = ['bond', 007, function(){}, true];
 
+
+
  /*
     - arrays can hold any value type, separated by comma
     - arrays are indexed numerically, beginning at 0
@@ -221,8 +223,10 @@ console.log('------ arrays ----------');
 
     //arrays can hold any data type
 
-
-
+console.log("index 0: ", myArr[0]);
+console.log("index 1: ", myArr[1]);
+console.log("index 2: ", myArr[2]);
+console.log("index 3: ", myArr[3]);
  /*******************************************
 
  STUDENT ACTIVITY 1:
@@ -231,8 +235,10 @@ console.log('------ arrays ----------');
     2.  console.log the sum of all the numbers in an array
 
  ********************************************/
+var myArr1 = [10, 50, 100, 200];
 
-
+console.log("index 1: ", myArr1[1]);
+console.log("the sum of all the numbers: ", myArr1[0] + myArr1[1] + myArr1[2] + myArr1[3]);
 
 /*******************************************
 
@@ -248,6 +254,14 @@ console.log('------ arrays ----------');
     3. output array items using string concatenation
 
  ********************************************/
+
+var myArr2 = [];
+myArr2[0] = "baseball";
+myArr2[1] = "football";
+myArr2[2] = "basketball";
+
+console.log(myArr2[0] + ", " +  myArr2[1] + ", " + myArr2[2]);
+
 
 
  // conditionals: (definition, indexing, math, if, if-else, if-else if, ternary)
