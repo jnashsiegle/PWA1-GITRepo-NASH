@@ -7,16 +7,16 @@
 
 // scope wrapper (self executing function)
 (function(){
-	
-/* 
+
+/*
 	===============================================
 	RESEARCHING
 	-----------------------------------------------
 	To find documentation, use http://dochub.io
-*/	
-	
-	
-/* 
+*/
+
+
+/*
 	===============================================
 	RECAP:  Data Types
 	-----------------------------------------------
@@ -27,7 +27,7 @@
      function(arg, arg2){}	  function literal
      undefined					  undefined
 */
-	
+
 
 /*
 	===============================================
@@ -46,7 +46,7 @@ console.log('------Recap Variables ----------');
 	-----------------------------------------------
     syntax, condition, different types of conditionals
 
-	a CONDITION is a boolean test between two values, the resulting boolean can be saved 
+	a CONDITION is a boolean test between two values, the resulting boolean can be saved
 
 		comparison operators:
 		<, >, >=, <=,!=,!==,!
@@ -60,14 +60,14 @@ console.log('------Recap Variables ----------');
 		=== is the identity operator, checks data type match - will use this
 
         Best Practice:  Use identity operator 99% of the time
-*/	
+*/
 
 console.log('------Recap Conditionals ----------');
 
 
 	/* 	==============================================================
 		if - else statements (allows only for one option)
-			
+
 		if (a < b){
 			//execute this block of code if a is less than b
 		}else{
@@ -109,7 +109,7 @@ console.log('------Recap Conditionals ----------');
 			same as:
 
 				if (weather === "Cloudy"){
-					mood = 
+					mood =
 				}else{
 					//false
 				};
@@ -159,36 +159,46 @@ var abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 // Use charAt() to console.log the 'v' in str1.
 
-
+console.log(str1.charAt(4));
 // Use indexOf() to console.log the index of 'm' in str2.
 
+console.log(str2.indexOf("m"));
 
 // Use lastIndexOf() to console.log the last 'a' in str1.
 
+	console.log(str1.lastIndexOf("a"));
 
 // Use length to console.log the length in str1.
+
+console.log(str1.length);
+
 
 
 // Use split() to console.log an array of the ABC's using the abc variable.
 // EX: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
+	console.log(abc.split(""));
 
 //STUDENT ACTIVITY 1:
 // Use substr() to console.log 'JavaScript!' from str1.
 
+console.log(str1.substr(7,11));    //start at 7th character and include next 11 indexes
 
 // Use concat() to console.log 'I love JavaScript ! JavaScript loves me!' with str1 and str2.
 
-
+console.log(str1 + " " + str2);
 
 //STUDENT ACTIVITY 2:
 // Use substring() to console.log 'JavaScript' from str2.
 
+console.log(str2.substring(0,10));
 
 //STUDENT ACTIVITY 3:
 // 1. Use toLowerCase() to console.log the str1 all in lowercase letters.
 // 2. Use toUpperCase() to console.log the str1 all in uppercase letters.
 
+console.log(str1.toLowerCase());
+	console.log(str1.toUpperCase());
 
 
 /*
@@ -199,19 +209,27 @@ var abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 console.log('------ MORE Numbers ----------');
 
+	var num = 457896;
+	var dec = 33.123456;
+
 // Use toExponential() console.log num in exponential notation with two decimals.
+
+console.log(num.toExponential(2));
+
 
 
 // Use toPrecision() console.log dec as four numbers.
 
+console.log(dec.toPrecision(4));
 
 //STUDENT ACTIVITY 4:
 //What method would you use to console.log the variable dec with two decimals.
 
+console.log(dec.toFixed(2));
 
 // Use toString() to console.log the type of num.
 
-
+console.log(typeof num.toString());
 
 /*
 	===============================================
@@ -219,23 +237,30 @@ console.log('------ MORE Numbers ----------');
 
 	TRUTHY / FALSY
 	-----------------------------------------------
-	Because of JavaScript's loose syntax, some values are == false, 
+	Because of JavaScript's loose syntax, some values are == false,
 	we call these FALSY.
-		
+
 		false 		== false  	| true
 		0 			== false	| true
 		"" 			== false	| true
 		undefined 	== false	| true  //var does not exist
-		NaN 		== false	| true 
-	
+		NaN 		== false	| true
+
 	So the following conditional fails...
 	-----------------------------------------------
 */
 
 console.log('------ MORE Booleans ----------');
 
+var num = 9 * "k";
+	console.log(num);
 
-	
+	if (num) {
+		console.log("It's true, the value is ", num);
+	}else{
+		console.log("It's false, the value is ", num);
+	}
+
 /*
 	===============================================
 	MORE:  Arrays
@@ -308,8 +333,8 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 	===============================================
 	MORE:  Operators (typeof())
 	-----------------------------------------------
-	
-	How to test for a variable's existence (typeof)	
+
+	How to test for a variable's existence (typeof)
 */
 
 console.log('------ MORE Operators - typeof() ----------');
@@ -319,8 +344,8 @@ console.log('------ MORE Operators - typeof() ----------');
 	===============================================
 	MORE:  Conditionals (switch())
 	-----------------------------------------------
-	
-	- “if” conditionals are perfect for comparing several sets of varying conditions  
+
+	- “if” conditionals are perfect for comparing several sets of varying conditions
 	- switch statements will evaluate a single conditional expression and
 		then perform an equality check against possible cases
 
@@ -333,7 +358,7 @@ console.log('------ MORE Operators - typeof() ----------');
 		// statements1
 	} else {
 		// statements2
-	};	
+	};
 
 */
 
@@ -356,7 +381,7 @@ console.log('------ MORE Conditionals - Switch ----------');
 	MORE:  Functions
 	-----------------------------------------------
 
-	- we reviewed returns and we went through examples with returns only 
+	- we reviewed returns and we went through examples with returns only
 		returning one value
 	- below shows how to returning multiple values using arrays
 
@@ -365,69 +390,75 @@ console.log('------ MORE Conditionals - Switch ----------');
 console.log('------ MORE Functions ----------');
 
 
-	/* 
+	/*
 		Self Executing Functions
-	
+
 		(function(){   //this is a basic function which includes () at end
 			//code goes here
 		})();          //the () tells the function to run immediately
 
 		Normal function:
 			var fn = function(){};  //a normal function
-		
+
 			fn();	//invoking the fn function
 
 			self function - combining the 2 statement above
-				var fn = (function(){})();	
-	*/	
+				var fn = (function(){})();
+	*/
 
 
 /*
 	===============================================
 	For / While Loop, basic logic structure
 	-----------------------------------------------
-	
+
 	Normal Operations:
 		1. initialize a counter;
 		2. loop/repeat a block of code until condition is met;
 			the condition that a loop checks for is usually against the counter variable
-		3. the most common use of loops is to cycle through all the 
+		3. the most common use of loops is to cycle through all the
 			values of an array or other forms of data set (such as objects)
-		4. a counter is needed in the loop - which is a simple numeric 
-			variable that increases or decreases 
-			- common variable names for counters are i and x - most developers 
+		4. a counter is needed in the loop - which is a simple numeric
+			variable that increases or decreases
+			- common variable names for counters are i and x - most developers
 				reserve these names for this purpose
 
 	WHILE LOOP:  while()
 		- the while loop is the simplest conditional loop
 		- before the code is executed, the condition is checked
-		- if it evaluates to true, the code is run, and the loop returns to the 
+		- if it evaluates to true, the code is run, and the loop returns to the
 			condition check again
-		- it will repeat this process until the condition becomes false, which 
+		- it will repeat this process until the condition becomes false, which
 			will then skip the code and exit the loop
-		
+
 		Basic While Loop:
 			while ( condition ) {
 				//code goes here
-			}			
+			}
 */
 console.log('------ While / Loop ----------');
 
-	
+	var numOfBeers = 10;
+
+	while(numOfBeers > 0){
+		console.log(numOfBeers + " kegs on the wall.");
+		numOfBeers--;
+	}
+
 /*
 	===============================================
 	For Loop, prebuilt logic structure
-	
+
 	for(initialize; condition; increment){}
 
 	FOR LOOP: for()
-		- a for loop is an increment-based loop, where the increment is 
+		- a for loop is an increment-based loop, where the increment is
 			part of the condition
 		- there are 3 statements inside the condition of a for loop: 
 			a.  first a counter variable is initialized
 			b.  second the “condition check”
-			c.  and third, increment the variable and perform the code 
-				till the end of the loop 
+			c.  and third, increment the variable and perform the code
+				till the end of the loop
 			d.  each is separated by semicolon, just like normal statements
 
 		Basic FOR Loop:
@@ -436,28 +467,32 @@ console.log('------ While / Loop ----------');
 			};
 */
 
-console.log('------For Loop ----------');
+console.log('------For Loop ----------'  + "complete");
 
 
-	/* 
+for(var beers = 10; beers >0; beers--){
+	console.log(beers + " bottles of beer on the wall.");
+}
+	/*
 		array.Length
-	
-		- if we wanted to cycle through all the values in an array, 
+
+		- if we wanted to cycle through all the values in an array,
 			we need to know how many values are in the array
-		- this is where the .length property comes in - this will return 
-			a number value, equal to the number of elements in the array 
-		- an array’s numeric index begins at 0  
-		- in the example below, the last index of the array would be 4 
-			- the  .length property returns the count, which would be 5	
-	*/	
+		- this is where the .length property comes in - this will return
+			a number value, equal to the number of elements in the array
+		- an array’s numeric index begins at 0
+		- in the example below, the last index of the array would be 4
+			- the  .length property returns the count, which would be 5
+	*/
+var myLetts = ["a", "b", "c", "d", "e" ];
+	console.log("length: ", myLetts.length);
 
-
-	/* 
+	/*
 		using the for() loop with .length
 
-		- the for loop is the most commonly used in programming, since 
-			the increment makes it easy to cycle through arrays or objects.  
-		- to cycle through each index of an array, we could use the .length 
+		- the for loop is the most commonly used in programming, since
+			the increment makes it easy to cycle through arrays or objects.
+		- to cycle through each index of an array, we could use the .length
 			property, and use the counter i as the index, such as:
 
 		for ( var i=0; i<myNums.length; i++){
@@ -467,29 +502,45 @@ console.log('------For Loop ----------');
 		- however, this is not the most efficient way...
 		- it is inefficient on the CPU
 
-		- depending on the size of an array, it can be more efficient to 
+		- depending on the size of an array, it can be more efficient to
 			save the array length in a variable, inside the first statement
 	*/
-
+for(var i = 0, j = myLetts.length; i < j; i++){
+	//console.log(myLetts[i]);
+}
 
 	/*
 		BREAK...
 
 		- in some situations, you may need to force a loop to stop
-		- by using the "break" statement, any loop will stop running at the 
+		- by using the "break" statement, any loop will stop running at the
 			break point, and perform no more iterations
 	*/
+
+	for(var i = 0, j = myLetts.length; i < j; i++){
+		if(i === 3){
+			console.log("testing out the break and it broke, yay!");
+			break;
+		}
+		console.log("2. length in loop: ", myLetts[i]);
+	}
 
 
 
 	/*
 		CONTINUE...
 
-		- while the break statement will stop a loop and exit it, the continue 
-			statement will stop a loop’s current iteration, and continue 
+		- while the break statement will stop a loop and exit it, the continue
+			statement will stop a loop’s current iteration, and continue
 			on to the next iteration
 	*/
-
+	for(var i = 0, j = myLetts.length; i < j; i++){
+		if(i === 3){
+			console.log("testing out the break and it broke, yay!");
+			continue;
+		}
+		console.log("length in loop: ", myLetts[i]);
+	}
 
 /*******************************************
  STUDENT ACTIVITY 7:
@@ -502,8 +553,17 @@ console.log('------For Loop ----------');
 		b.  create a for loop using the faster method (4 parameters)
 			- in the loop just console.log the values
 ********************************************/
+var superArr = ["Superman", "Batman", "Wolverine", "Iceman"];
+	console.log(superArr);
 
+for(var i=0; i<superArr.length; i++){
+	console.log(superArr[i] + "\n" );
 
+}
+
+	for(var i= 0, j=superArr.length; i < j; i++){
+		console.log(superArr[i]);
+	}
 
 /*******************************************
     STUDENT ACTIVITY 8: (More Practice):
@@ -526,7 +586,18 @@ console.log('------For Loop ----------');
     console.log('------ More PRACTICE ----------');
 
     var name = 'This is a nice change of pace';
-
+console.log(name.toLowerCase());
+	console.log(name.toUpperCase());
+	//console.log(superArr.substr(3));
+	console.log(name.lastIndexOf("nice"));
+	console.log(name[10],name[11],name[12],name[13],name[14]);
 
 
 })();
+
+var name1 = ("n | a | m | e");{
+	console.log(name1);
+	console.log(name1[4]);
+//	console.log(name1.reverse());
+	console.log(name1[1],name1[2],name1[3]);
+}
