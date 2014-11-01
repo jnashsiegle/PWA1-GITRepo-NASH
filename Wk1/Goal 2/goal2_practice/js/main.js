@@ -586,18 +586,21 @@ for(var i=0; i<superArr.length; i++){
     console.log('------ More PRACTICE ----------');
 
     var name = 'This is a nice change of pace';
-console.log(name.toLowerCase());
-	console.log(name.toUpperCase());
-	//console.log(superArr.substr(3));
-	console.log(name.lastIndexOf("nice"));
-	console.log(name[10],name[11],name[12],name[13],name[14]);
-
+console.log("1." + "  " + name.toLowerCase());
+	console.log("2." + "  " +  name.toUpperCase());
+	console.log("3." + "  " + name.charAt(3));
+	console.log("4." + "  " + name.lastIndexOf("nice"));
+	//console.log("5." + "  " + name.substring(10, 5);
 
 })();
 
-var name1 = ("n | a | m | e");{
-	console.log(name1);
-	console.log(name1[4]);
-//	console.log(name1.reverse());
-	console.log(name1[1],name1[2],name1[3]);
-}
+var name = ["james, john, jill, jane, susan"];
+	console.log("6." + "  " + name);
+	console.log("7." + "  " + name[4]);
+	//console.log("8." + "  " + name.split());
+    //console.log("9." + "  " + name.reverse());
+	//console.log("10." + " " + name.shift());
+	//console.log("11." + " " + name.join());
+	//console.log("12." + " " + name.xxxx());
+
+
