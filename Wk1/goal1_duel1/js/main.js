@@ -2,6 +2,7 @@
  * Created by Jana Nash-Siegle on 10/31/14.
  * Duel #1
  * PWA-1
+ * *Follow Along Video
  */
 
 //self executing function
@@ -103,4 +104,4 @@
 
 
 
-})();
+})();                                                                       //end of program
