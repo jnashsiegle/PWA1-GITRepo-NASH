@@ -14,7 +14,7 @@
 	
 	// Validates search query
 	var validqte = function(query){					//fixed err == to = )& this creates a var function 4 query
-		console.log("this is at the beginning of the search validation query");	//putting in place section checks																				//after user inputs term(s)
+		console.log("this is at the beginning of the search validation query");	//putting in place section checks for debugging																				//after user inputs term(s)
 															// Trim whitespace from start and end of search query
 		while(query.charAt(0) === " "){						//fixed err of = to === empty space before user input/term?
 			query = query.substring(1, query.length);					//Not anymore!

@@ -1,5 +1,5 @@
 /**
- * Created by Jana Nash-Siegle on 10/31/14.
+ * Created by Jana Nash-Siegle on 11/4/14.
  * Duel #1
  * PWA-1
  * *Follow Along Video
@@ -11,20 +11,20 @@
     console.log("FIGHT!!");                                             //shows function is working
 
 
-    //player names
+    //Redefining players and making arrays
 
-    var playerOneName = "Spiderman";                                    //first player name
-    var playerTwoName = "Batman";                                       //second player name
+    var playerMac = ["Mac",20,100];                                    //first player name
+    var playerWindows = ["Windows",20,100];                                       //second player name
 
-    // player damage
+    // Original player damage
 
-    var playerOneDmg = 20;                                              //first player damage
-    var playerTwoDmg = 20;                                              //second player damage
+    //var playerOneDmg = 20;                                              //first player damage
+   // var playerTwoDmg = 20;                                              //second player damage
 
-    // player health
+    // Original player health
 
-    var playerOneHealth = 100;                                          //first player health max
-    var playerTwoHealth = 100;                                          //second player health max
+    //var playerOneHealth = 100;                                          //first player health max
+   // var playerTwoHealth = 100;                                          //second player health max
 
     //Game Round to track progress of game
 
@@ -33,22 +33,23 @@
     function fight() {                                                  //need a function calculating the fight
         console.log("In the fight function");                           //prints to console that the fight FN is
                                                                         //printing off
-        alert(playerOneName + ":" + playerOneHealth + " *START* " + playerTwoName + ":" + playerTwoHealth);
+        alert(playerMac[0] + ":" + playerMac[2] + " *START* " + playerWindows[0] + ":" + playerWindows[2]);
+                                                                    //reconfigured alert reflecting array
                                                                         //alert for player to start of game
     for (var i = 0; i < 10; i++) {                                      //formula for random number damage to hit player
             //Random formula is - Math.floor(random() * (max - min) + min);
 
-            var minDamage1 = playerOneDmg * .5;                         //minimal dmg to player one
-            var minDamage2 = playerTwoDmg * .5;                         //minimal dmg to player two
-            var f1 = Math.floor(Math.random() * (playerOneDmg - minDamage1) + minDamage1);  //dmg formula to players
-            var f2 = Math.floor(Math.random() * (playerTwoDmg - minDamage2) + minDamage2);  //each players health
-
+            var minDamage1 = playerMac[1] * .5;                    //minimal dmg to player one / reconfigured for array
+            var minDamage2 = playerWindows[1] * .5;                //minimal dmg to player two / reconfigured for array
+            var f1 = Math.floor(Math.random() * (playerMac[1] - minDamage1) + minDamage1);  //dmg formula to players
+            var f2 = Math.floor(Math.random() * (playerWindows[1] - minDamage2) + minDamage2);  //each players health
+                                                                    //reconfigured to reflect array
             //console.log(f1);
             //console.log(f2);
 
             //inflict Damage
-            playerOneHealth -= f1;                                      //deducts the damage from players health
-            playerTwoHealth -= f2;                                      //deducts the damage from the players health
+            playerMac[2] -= f1;                //deducts the damage from players health / reconfigured to reflect array
+            playerWindows[2] -= f2;        //deducts the damage from the players health / reconfigured to reflect array
 
             // console.log(playerOneHealth);
             // console.log(playerTwoHealth);
