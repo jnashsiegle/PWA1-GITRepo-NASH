@@ -1,11 +1,11 @@
 /**Jana Nash Siegle
- Nov 2, 2014
+ Nov 4, 2014
  PWA-1 1411-01
  O'Loughlin**/
 
-// Create privatized scope using a self-executing function
+// Create encapsulated privatized scope using a self-executing function
 (function(){																	//self-executing opening function...
-																				//with a specific scope
+	console.log("are we starting?");																			//with a specific scope
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)				//var to get results of search
 	var resultsDIV = document.getElementById("results"),						//var to retrieve input from searchform
 		searchInput = document.forms[0].search,
@@ -13,19 +13,19 @@
 	;																			//end of setting three vars
 	
 	// Validates search query
-	var validqte = function(query){										//(err ==s/b = )& this creates a var function 4 query
-																		//after user inputs term(s)
-		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){									//empty space before user input/term?
+	var validqte = function(query){					//fixed err == to = )& this creates a var function 4 query
+		console.log("this is at the beginning of the search validation query");	//putting in place section checks																				//after user inputs term(s)
+															// Trim whitespace from start and end of search query
+		while(query.charAt(0) === " "){						//fixed err of = to === empty space before user input/term?
 			query = query.substring(1, query.length);					//Not anymore!
 		};																//end first while
-		while(query.charAt(query.length-1) === ""){						//empty space after term?
-			query = query.substring(0, query.length-1);					//Mr. clean to the rescue!!
-		;																//end 2nd while
+		while(query.charAt(query.length-1) === "") {						//empty space after term?
+			query = query.substring(0, query.length - 1);					//Mr. clean to the rescue!!
+		};																//end 2nd while
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){											//term entered has 3 characters?
-			alert("Your search query is too small, try again.");	//  (err no ending quotes in alert fixed); & try again
+			alert("Your search query is too small, try again.");   //(fixed err no ending quotes in alert); & try again
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();									//when searchInput has the focus...
@@ -35,9 +35,9 @@
 		search(query);												//initializes the search query FN
 	};																//end
 	
-	// Finds search matches
-	var search = function(query)									//creating var FN for search query
-		
+	// Finds search matches //error somewhere in here preventing code from running
+	var search = function(query){	//fixed error of no opening FN bracket		//creating var FN for search query
+		console.log("this is at the beginning of the search matches query");  //putting in place section checks
 		// split the user's search query string into an array
 		var queryArray = query.join(" ");						//taking users input and making keywords into an array
 		
@@ -45,29 +45,29 @@
 		var results = [];											//store array to match up against db
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++){						//let's look for matches!!
-		
+		for(var i=0, j=db.length; i<j; i++) {						//let's look for matches!!
+
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
 			var dbTitleEnd = db[i].indexOf('|');					//divide each title up by a pipe! happy keywords!!
 			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);  //save title into lowercase
-			
+
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){		//let's nose through the search string input by user
+			for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {		//let's nose through the search string input by user
 				var qitem = queryArray[ii].tolowercase();			//and we'll save each one into a lowercase variable
-				
+
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
 				var compare = dbitem.indexOf(qitem);		//what kind of bait do keywords nibble on?  time to fish!
-				if(compare !== -1){									//for keywords in the title
+				if (compare !== -1) {									//for keywords in the title
 					results.push(db[i]);			//hey we found a match!  Your prize is a title in the results array!
 				};										//end if
-			;											//unnecessary semi colon's ending for's |
-		;												//"did you bring protection?", said one semi to the other?
+			};											//fixed err + closing bracket
+		};												//fixed err + closing bracket
 		
 		results.sort();									//let's sort our results
-		
+		console.log(results);			//results check for de-bugging
 		// Check that matches were found, and run output functions
 		if(results.length = 0){							//let's check our matches array
 			noMatch();									//if none, awwww.. I wanted to play, I'm bored.
@@ -113,13 +113,13 @@
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){									//submit FN
+	document.forms[0].onsubmit = function() {									//submit FN
 		var query = searchInput.value;											//what value is in the input field
 		validqte(query);														//is everything correct?
 
-        // return false is needed for most events - this will be reviewed in upcoming course material
-        // THE LINE DIRECTLY BELOW IS CORRECT
+		// return false is needed for most events - this will be reviewed in upcoming course material
+		// THE LINE DIRECTLY BELOW IS CORRECT
 		return false;															//cancels default behavior, stops
-	;																			//link from being followed
+	};						//fixed err added closing bracket to semi colon				//link from being followed
 
 })();
