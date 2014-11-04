@@ -23,8 +23,8 @@
 
     // Original player health
 
-    //var playerOneHealth = 100;                                          //first player health max
-   // var playerTwoHealth = 100;                                          //second player health max
+    //var playerMac[2] = 100;                                          //first player health max
+   // var playerWindows[2] = 100;                                          //second player health max
 
     //Game Round to track progress of game
 
@@ -51,20 +51,20 @@
             playerMac[2] -= f1;                //deducts the damage from players health / reconfigured to reflect array
             playerWindows[2] -= f2;        //deducts the damage from the players health / reconfigured to reflect array
 
-            // console.log(playerOneHealth);
-            // console.log(playerTwoHealth);
+            // console.log(playerMac[2]);
+            // console.log(playerWindows[2]);
 
-            console.log(playerOneName + ":" + playerOneHealth + " " + playerTwoName + ":" + playerTwoHealth);
+            console.log(playerMac[0] + ":" + playerMac[2] + " " + playerWindows[0] + ":" + playerWindows[2]);
                                                                         //this will print out to console the player's
-                                                                        //name and health with each round
+                                                    //name and health with each round / //reconfigured to reflect array
             var results = winnerCheck();                                //checking to see if we have a winner yet
             console.log(results);                                       //printing to console results of winner check
                                                                         //calling winnerCheck FN
             if (results === "no winner"){                               //if no winner alerting user to number of round
                                                                         //players health/name
                 round++;                                                //adds 1 to each sequential round
-                alert(playerOneName + ":" + playerOneHealth + " *ROUND " + round + " OVER* " + playerTwoName + ":" + playerTwoHealth);
-                                                                        //formats the alert for the user
+                alert(playerMac[0] + ":" + playerMac[2] + " *ROUND " + round + " OVER* " + playerWindows[0] + ":" + playerWindows[2]);
+                                                     //formats the alert for the user / //reconfigured to reflect array
             }else{                                                      //offers a conditional
                 alert(results);                                         //alert with the winning results
                 break;                                                  //ends the game.
@@ -80,12 +80,17 @@
 
         var result = "no winner";                                       //if no one has gone beneath 0, no winner, this
                                                                         //is the result
-        if (playerOneHealth < 1 && playerTwoHealth < 1) {               //calculates if both players go below 0, they
+        if (playerMac[2] < 1 && playerWindows[2] < 1) {               //calculates if both players go below 0, the
+                                                                        // reconfigured to reflect array
             result = "You Both Die";                                    //both die, no winner of game
-    } else if (playerOneHealth < 1) {                                   //calculates how player 2 would win when 1 goes
-            result = playerTwoName + " " + "WINS!!!";                   //beneath 0, else player 1 would win when
-        } else if (playerTwoHealth < 1) {                               //player 2 goes beneath 0
-            result = playerOneName + " " +  "WINS!!!";                   //resulting in player 1 win
+    } else if (playerMac[2] < 1) {                                   //calculates how player 2 would win when 1 goes /
+                                                                        // reconfigured to reflect array
+            result = playerWindows[0] + " " + "WINS!!!";             //beneath 0, else player 1 would win when /
+                                                                         // reconfigured to reflect array
+        } else if (playerWindows[2] < 1) {                               //player 2 goes beneath 0 /
+                                                                         // reconfigured to reflect array
+            result = playerMac[0] + " " +  "WINS!!!";                   //resulting in player 1 win /
+                                                                         // reconfigured to reflect array
         }
 
         return result;                                                  //this is where the result var is returned to
