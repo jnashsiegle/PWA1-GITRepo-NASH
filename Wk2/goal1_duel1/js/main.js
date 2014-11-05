@@ -6,7 +6,7 @@
  */
 
 //self executing function
-(function() {
+window.onload = (function() {
 
     console.log("FIGHT!!");                                             //shows function is working
 
@@ -111,3 +111,5 @@
 
 
 })();                                                                       //end of program
+
+
