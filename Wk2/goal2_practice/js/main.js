@@ -500,7 +500,7 @@ console.log("James Bond cars, ", cars);
 
 /*
 
-
+f
 	===============================================
 	For / While Loop, basic logic structure
 	-----------------------------------------------
@@ -690,10 +690,11 @@ for(var i=0; i<superArr.length; i++){
 var name = ["james, john, jill, jane, susan"];
 	console.log("6." + "  " + name);
 	console.log("7." + "  " + name[4]);
-	//console.log("8." + "  " + name.split());
-    //console.log("9." + "  " + name.reverse());
+	console.log("8." + "  " + name.split('|'));
+    console.log("9." + "  " + name.reverse);
 	//console.log("10." + " " + name.shift());
 	//console.log("11." + " " + name.join());
 	//console.log("12." + " " + name.xxxx());
+
 
 
