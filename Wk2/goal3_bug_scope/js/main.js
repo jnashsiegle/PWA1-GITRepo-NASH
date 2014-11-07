@@ -257,6 +257,18 @@ console.log('------ Debugging ----------');
 */
 console.log("---------- Scope & Context ----------------");
 
+ 	var myctr = 0;
+
+	var myCounter1 = function(newct){
+
+			var myctr = newct + 10;   //adding var makes this now a local var so it will not fill global myctr
+		console.log("function", myctr);  //leave off the var and it will read the global variable
+
+	};
+
+	myCounter1(5);
+	console.log("after function myctr", myctr);  //will come back
+
 
 
 
@@ -270,6 +282,29 @@ console.log("---------- Scope & Context ----------------");
 */
 
     console.log("---------- Closure ----------------");
+
+	var fname= "James";
+
+	var nameFN = function(var1){
+		var firstName = var1;
+		var lastName = "Bond";
+		var name = firstName + " " + lastName;
+
+		var closureFN = function(){
+
+			console.log("first & last name", name);
+		};
+			return closureFN;
+
+
+	};
+
+	var fullName = nameFN(fname);
+	//console.log("returned full name: = ", fullName);
+	//console.log("var fname: = ", fname);
+	//console.log("first name: = ", firstName);     //will not work because they are out of scope of the function
+	//console.log("last name: = ", lastName);     //will not work because they are out of scope of the function
+	fullName();
 
 
 
