@@ -1,7 +1,7 @@
 /*
 	Jana Nash-Siegle
 	PWA1 Goal 3
-	JavaScript Debugging & Scope
+	JavaScript Debugging & Scope - completed videos.	
 */
 
 
