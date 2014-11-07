@@ -13,8 +13,8 @@
 	;																			//end of setting three vars
 	
 	// Validates search query
-	var validqte = function(query){					//fixed err == to = )& this creates a var function 4 query
-		console.log("this is at the beginning of the search validation query");	//putting in place section checks for debugging																				//after user inputs term(s)
+	var validate = function(query){					//fixed err == to = )& this creates a var function 4 query
+		console.log("this is at the beginning of the search validation query");	//putting in place section checks for debugging																							//after user inputs term(s)
 															// Trim whitespace from start and end of search query
 		while(query.charAt(0) === " "){						//fixed err of = to === empty space before user input/term?
 			query = query.substring(1, query.length);					//Not anymore!
@@ -37,43 +37,51 @@
 	
 	// Finds search matches //error somewhere in here preventing code from running
 	var search = function(query){	//fixed error of no opening FN bracket		//creating var FN for search query
-		console.log("this is at the beginning of the search matches query");  //putting in place section checks
+		console.log("this is at the beginning of the search matches query");    //putting in place section checks
 		// split the user's search query string into an array
-		var queryArray = query.join(" ");						//taking users input and making keywords into an array
-		
+		var queryArray = query.split(" ");										//taking users input and making keywords
+																				// into an array ;  err split to join
+		console.log("queryArray: ", queryArray);								//test to see if queryArray has value
 		// array to store matched results from database.js
-		var results = [];											//store array to match up against db
+		var results = [];                                       			//store array to match up against db
+		console.log("results variable following queryArray: ", results);	//check to see if there is value in results
 
 		// loop through each index of db array
 		for(var i=0, j=db.length; i<j; i++) {						//let's look for matches!!
 
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
-			var dbTitleEnd = db[i].indexOf('|');					//divide each title up by a pipe! happy keywords!!
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);  //save title into lowercase
+			var dbTitleEnd = db[i].split('|');					//divide each title up by a pipe! happy keywords!!;
+																// changed indexOf to split
+			var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);  //save title into lowercase; fixed syntax of to
+																		//	tolowercase to toLowerCase()
 
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
-			for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {		//let's nose through the search string input by user
-				var qitem = queryArray[ii].tolowercase();			//and we'll save each one into a lowercase variable
+			for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {  // the search string input by user
+				var qitem = queryArray[ii].toLowerCase();			//and we'll save each one into a lowercase variable
+																		//fixed syntax of to
+																		//	tolowercase to toLowerCase()
 
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
 				var compare = dbitem.indexOf(qitem);		//what kind of bait do keywords nibble on?  time to fish!
 				if (compare !== -1) {									//for keywords in the title
 					results.push(db[i]);			//hey we found a match!  Your prize is a title in the results array!
+
 				};										//end if
 			};											//fixed err + closing bracket
 		};												//fixed err + closing bracket
 		
 		results.sort();									//let's sort our results
-		console.log(results);			//results check for de-bugging
+		console.log("results from matches: ", results);							//results check for de-bugging
 		// Check that matches were found, and run output functions
-		if(results.length = 0){							//let's check our matches array
+		if(results.length === 0){							//let's check our matches array; changed assignment to equality
 			noMatch();									//if none, awwww.. I wanted to play, I'm bored.
 		}else{											//but if there are matches??????
 			showMatches(results);						//yay!!  let's show matches
-		};												//more unnecessary colons...semi-colons but let's not be lazy
+		};
+														//more unnecessary colons...semi-colons but let's not be lazy
 	};													//more semi's down the pike!!!  should save on gas and stay home
 														//but better safe than sorry!
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
@@ -115,7 +123,7 @@
 	// THE LINE DIRECTLY BELOW IS CORRECT
 	document.forms[0].onsubmit = function() {									//submit FN
 		var query = searchInput.value;											//what value is in the input field
-		validqte(query);														//is everything correct?
+		validate(query);														//is everything correct?
 
 		// return false is needed for most events - this will be reviewed in upcoming course material
 		// THE LINE DIRECTLY BELOW IS CORRECT
