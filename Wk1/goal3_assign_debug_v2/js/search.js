@@ -4,8 +4,8 @@
  O'Loughlin**/
 
 // Create privatized scope using a self-executing function
-(function(){																	//self-executing opening function...
-																				//with a specific scope
+(function(){																	//self-executing opening function
+	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)				//var to get results of search
 	var resultsDIV = document.getElementById("results"),						//var to retrieve input from searchform
 		searchInput = document.forms[0].search,
