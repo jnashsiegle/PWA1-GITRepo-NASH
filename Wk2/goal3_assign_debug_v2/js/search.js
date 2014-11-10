@@ -51,7 +51,7 @@
 
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
-			var dbTitleEnd = db[i].split('|');					//divide each title up by a pipe! happy keywords!!;
+			var dbTitleEnd = db[i].indexOf('|');					//divide each title up by a pipe! happy keywords!!;
 																// changed indexOf to split
 			var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);  //save title into lowercase; fixed syntax of to
 																		//	tolowercase to toLowerCase()
