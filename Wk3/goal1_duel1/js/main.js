@@ -12,34 +12,62 @@ window.onload = (function() {
     console.log("FIGHT!!");                                             //shows function is working
 
 //Defining the Dom
-    var playerMac_txt = (document.querySelector("#mac").querySelector("p");
-    var playerWindows_txt = (document.querySelector("#windows").querySelector("p");
+    var playerMac_txt = (document.querySelector("#mac").querySelector("p"));
+    var playerWindows_txt = (document.querySelector("#windows").querySelector("p"));
+    var round_txt = (document.querySelector("h5"));
+    var button = (document.getElementById("fight_btn"));
 
-    //Redefining players and making arrays
+    console.log();
 
-    var playerMac = ["Mac",20,100];                                    //first player name
-    var playerWindows = ["Windows",20,100];                                       //second player name
+    //Click Event for Fight
+    button.addEventListener("click", fight, false);
 
-    // Original player damage
-
+    // Original code for  player damage and health
     //var playerOneDmg = 20;                                              //first player damage
-   // var playerTwoDmg = 20;                                              //second player damage
-
+    // var playerTwoDmg = 20;                                            //second player damage
     // Original player health
-
     //var playerMac[2] = 100;                                          //first player health max
-   // var playerWindows[2] = 100;                                          //second player health max
+    // var playerWindows[2] = 100;                                          //second player health max
+
+    /*Redefining players and making arrays - first revision of code
+    var playerMac = ["Mac",20,100];                                    //first player name
+    var playerWindows = ["Windows",20,100];                                       //second player name*/
+
+//Object Array for fighter's health and damage
+    var fighters = [
+        {
+            name: "Mac",            //index0
+            damage: 20,             //Mac's damage
+            health: 100             //Mac's health
+        },
+        {
+            name: "Windows",        //index1
+            damage: 20,             //Window's damage
+            health: 100             //Window's Health
+        }
+    ];
 
     //Game Round to track progress of game
 
     var round = 0;                                                      //variable for game rounds
 
+    //DOM Initialization for top of page, inner.HTML text
+
+    round_txt.innerHTML = "Click FIGHT BUTTON to Start!";
+    playerMac_txt.innerHTML = fighters[0].name + ":  " + fighters[0].health;
+    playerWindows_txt.innerHTML = fighters[1].name + ":  " + fighters[1].health;
+
+
+
     function fight() {                                                  //need a function calculating the fight
         console.log("In the fight function");                           //prints to console that the fight FN is
                                                                         //printing off
-        alert(playerMac[0] + ":" + playerMac[2] + " *START* " + playerWindows[0] + ":" + playerWindows[2]);
-                                                                    //reconfigured alert reflecting array
-                                                                        //alert for player to start of game
+      /* Old Alert Code  alert(playerMac[0] + ":" + playerMac[2] + " *START* " + playerWindows[0] + ":" + playerWindows[2]);
+      */
+/*console.log("is line 67 showing up?");
+        playerMac_txt.innerHTML = fighters[0].name + ":  " + fighters[0].health;
+        playerWindows_txt.innerHTML = fighters[1].name + ":  " + fighters[1].health;*/
+
     for (var i = 0; i < 10; i++) {                                      //formula for random number damage to hit player
             //Random formula is - Math.floor(random() * (max - min) + min);
 
