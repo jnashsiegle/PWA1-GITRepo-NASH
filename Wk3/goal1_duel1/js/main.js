@@ -1,81 +1,52 @@
 /**
  * Created by Jana Nash-Siegle on 11/4/14.
- * updated 11/9/2014
+ * updated 11/10/2014
  * Duel #1
  * PWA-1
- * *Follow Along Video
+ *
  */
+
+
 
 //self executing function
 window.onload = (function() {
 
     console.log("FIGHT!!");                                             //shows function is working
 
-//Defining the Dom
-    var playerMac_txt = (document.querySelector("#mac").querySelector("p"));
-    var playerWindows_txt = (document.querySelector("#windows").querySelector("p"));
-    var round_txt = (document.querySelector("h5"));
-    var button = (document.getElementById("fight_btn"));
 
-    console.log();
+    //Redefining players and making arrays
 
-    //Click Event for Fight
-    button.addEventListener("click", fight, false);
+    var playerMac = ["Mac",20,100];                                    //first player name
+    var playerWindows = ["Windows",20,100];                                       //second player name
 
-    // Original code for  player damage and health
+    // Original player damage
+
     //var playerOneDmg = 20;                                              //first player damage
-    // var playerTwoDmg = 20;                                            //second player damage
+    // var playerTwoDmg = 20;                                              //second player damage
+
     // Original player health
+
     //var playerMac[2] = 100;                                          //first player health max
     // var playerWindows[2] = 100;                                          //second player health max
-
-    /*Redefining players and making arrays - first revision of code
-    var playerMac = ["Mac",20,100];                                    //first player name
-    var playerWindows = ["Windows",20,100];                                       //second player name*/
-
-//Object Array for fighter's health and damage
-    var fighters = [
-        {
-            name: "Mac",            //index0
-            damage: 20,             //Mac's damage
-            health: 100             //Mac's health
-        },
-        {
-            name: "Windows",        //index1
-            damage: 20,             //Window's damage
-            health: 100             //Window's Health
-        }
-    ];
 
     //Game Round to track progress of game
 
     var round = 0;                                                      //variable for game rounds
 
-    //DOM Initialization for top of page, inner.HTML text
-
-    round_txt.innerHTML = "Click FIGHT BUTTON to Start!";
-    playerMac_txt.innerHTML = fighters[0].name + ":  " + fighters[0].health;
-    playerWindows_txt.innerHTML = fighters[1].name + ":  " + fighters[1].health;
-
-
-
     function fight() {                                                  //need a function calculating the fight
         console.log("In the fight function");                           //prints to console that the fight FN is
                                                                         //printing off
-      /* Old Alert Code  alert(playerMac[0] + ":" + playerMac[2] + " *START* " + playerWindows[0] + ":" + playerWindows[2]);
-      */
-/*console.log("is line 67 showing up?");
-        playerMac_txt.innerHTML = fighters[0].name + ":  " + fighters[0].health;
-        playerWindows_txt.innerHTML = fighters[1].name + ":  " + fighters[1].health;*/
-
-    for (var i = 0; i < 10; i++) {                                      //formula for random number damage to hit player
+        alert(playerMac[0] + ":" + playerMac[2] + " *START* " + playerWindows[0] + ":" + playerWindows[2]);
+        //reconfigured alert reflecting array
+        //alert for player to start of game
+        for (var i = 0; i < 10; i++) {                                      //formula for random number damage to hit player
             //Random formula is - Math.floor(random() * (max - min) + min);
 
             var minDamage1 = playerMac[1] * .5;                    //minimal dmg to player one / reconfigured for array
             var minDamage2 = playerWindows[1] * .5;                //minimal dmg to player two / reconfigured for array
             var f1 = Math.floor(Math.random() * (playerMac[1] - minDamage1) + minDamage1);  //dmg formula to players
             var f2 = Math.floor(Math.random() * (playerWindows[1] - minDamage2) + minDamage2);  //each players health
-                                                                    //reconfigured to reflect array
+            //reconfigured to reflect array
             //console.log(f1);
             //console.log(f2);
 
@@ -87,16 +58,16 @@ window.onload = (function() {
             // console.log(playerWindows[2]);
 
             console.log(playerMac[0] + ":" + playerMac[2] + " " + playerWindows[0] + ":" + playerWindows[2]);
-                                                                        //this will print out to console the player's
-                                                    //name and health with each round / //reconfigured to reflect array
+            //this will print out to console the player's
+            //name and health with each round / //reconfigured to reflect array
             var results = winnerCheck();                                //checking to see if we have a winner yet
             console.log(results);                                       //printing to console results of winner check
                                                                         //calling winnerCheck FN
             if (results === "no winner"){                               //if no winner alerting user to number of round
-                                                                        //players health/name
+                //players health/name
                 round++;                                                //adds 1 to each sequential round
                 alert(playerMac[0] + ":" + playerMac[2] + " *ROUND " + round + " OVER* " + playerWindows[0] + ":" + playerWindows[2]);
-                                                     //formats the alert for the user / //reconfigured to reflect array
+                //formats the alert for the user / //reconfigured to reflect array
             }else{                                                      //offers a conditional
                 alert(results);                                         //alert with the winning results
                 break;                                                  //ends the game.
@@ -113,16 +84,16 @@ window.onload = (function() {
         var result = "no winner";                                       //if no one has gone beneath 0, no winner, this
                                                                         //is the result
         if (playerMac[2] < 1 && playerWindows[2] < 1) {               //calculates if both players go below 0, the
-                                                                        // reconfigured to reflect array
+            // reconfigured to reflect array
             result = "You Both Die";                                    //both die, no winner of game
-    } else if (playerMac[2] < 1) {                                   //calculates how player 2 would win when 1 goes /
-                                                                        // reconfigured to reflect array
+        } else if (playerMac[2] < 1) {                                   //calculates how player 2 would win when 1 goes /
+            // reconfigured to reflect array
             result = playerWindows[0] + " " + "WINS!!!";             //beneath 0, else player 1 would win when /
-                                                                         // reconfigured to reflect array
+            // reconfigured to reflect array
         } else if (playerWindows[2] < 1) {                               //player 2 goes beneath 0 /
-                                                                         // reconfigured to reflect array
+            // reconfigured to reflect array
             result = playerMac[0] + " " +  "WINS!!!";                   //resulting in player 1 win /
-                                                                         // reconfigured to reflect array
+            // reconfigured to reflect array
         }
 
         return result;                                                  //this is where the result var is returned to
@@ -131,8 +102,8 @@ window.onload = (function() {
 
 
 
-        /**This is where the program starts to run**/                   //Start of program
-        console.log("Program Starts");                                   //prints showing program starts
+    /**This is where the program starts to run**/                   //Start of program
+    console.log("Program Starts");                                   //prints showing program starts
 
     fight();                                                            //calling or invoking the fight FN
 
