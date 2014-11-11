@@ -12,6 +12,8 @@ window.onload = (function() {
     console.log("FIGHT!!");                                             //shows function is working
 
 //Defining the Dom
+    var playerMac_txt = (document.querySelector("#mac").querySelector("p");
+    var playerWindows_txt = (document.querySelector("#windows").querySelector("p");
 
     //Redefining players and making arrays
 
