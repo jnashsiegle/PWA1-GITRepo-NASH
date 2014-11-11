@@ -22,14 +22,12 @@ body{
 }
 
 #mac{
-	margin: 0px 0px 0px 15%;
-	float:left;
+	text-align: center;
 	color: #ffffff;
 }
 
 #windows{
-	margin: 0px 0px 0px 59%;
-	float:left;
+	text-align: center;
 	color: #ffffff;
 }
 
@@ -42,12 +40,14 @@ body{
 
 #mac p{
 	/*font-family: arial;*/
-	font-size:  25px;
+	font-size:  12px;
+	text-align: center;
 }
 
 #windows p{
 	/*font-family: arial;*/
-	font-size:  25px;
+	font-size:  12px;
+	text-align: center;
 }
 
 #fight_btn{
