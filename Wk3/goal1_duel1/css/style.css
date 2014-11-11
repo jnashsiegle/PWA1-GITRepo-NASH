@@ -17,31 +17,35 @@ body{
 
 }
 
-#kabal{
+#title{
+	text-align: center;
+}
+
+#mac{
 	margin: 0px 0px 0px 15%;
 	float:left;
 	color: #ffffff;
 }
 
-#kratos{
+#windows{
 	margin: 0px 0px 0px 59%;
 	float:left;
 	color: #ffffff;
 }
 
-#duel{
+/*#duel{
 	margin: 0px 0px 0px 0px;
 	text-align: center;
 
 
-}
+}*/
 
-#kabal p{
+#mac p{
 	/*font-family: arial;*/
 	font-size:  25px;
 }
 
-#kratos p{
+#windows p{
 	/*font-family: arial;*/
 	font-size:  25px;
 }

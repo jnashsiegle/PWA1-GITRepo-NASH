@@ -1,5 +1,5 @@
 /**Jana Nash Siegle
- Nov 4, 2014
+ Nov 9, 2014
  PWA-1 1411-01
  O'Loughlin**/
 
@@ -40,7 +40,7 @@
            //putting in place section checks
         // split the user's search query string into an array
         var queryArray = query.split(" ");										//taking users input and making keywords
-        // into an array ;  err split to join
+        // into an array ;  err split fixed to join
         console.log("queryArray: ", queryArray);								//test to see if queryArray has value
         // array to store matched results from database.js
         var results = [];                                       			//store array to match up against db
@@ -52,7 +52,7 @@
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|');					//divide each title up by a pipe! happy keywords!!;
-            // changed indexOf to split ; wrong fix, changed back to indexOf
+                                                        // changed indexOf to split ; wrong fix, changed back to indexOf
             var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);  //save title into lowercase; fixed syntax of to
                                                                         //	tolowercase to toLowerCase()
 
@@ -76,7 +76,7 @@
         console.log("a I seeing the correct results number?" , results.length);
 
         // Check that matches were found, and run output functions
-        if(results.length === 0){							//let's check our matches array; changed assignment to equality
+        if(results.length === 0){				//ERR fix of = to ===let's check our matches array; changed assignment to equality
             noMatch();									//if none, awwww.. I wanted to play, I'm bored.
         }else{											//but if there are matches??????
             showMatches(results);						//yay!!  let's show matches
@@ -111,8 +111,8 @@
             title = results[i].substring(0, titleEnd);		//pull the title out of the string.
 
             // pull the video url after the title
-            url = results[i].substring(results[i].indexOf('|')+1, results[i].length);  //go here..find video
-
+            url = results[i].substring(results[i].indexOf('|')+1, results[i].length);  //go here..find video;fixed syntax err
+                                                                                        //of subString to substring
             // make the video link - THE NEXT LINE IS CORRECT.
             html += '<p><a href=' + url + '>' + title + '</a></p>';				//jeez, will it never end, now linking?
         };																		//some things are just necessary

@@ -1,5 +1,6 @@
 /**
  * Created by Jana Nash-Siegle on 11/4/14.
+ * updated 11/9/2014
  * Duel #1
  * PWA-1
  * *Follow Along Video
@@ -10,6 +11,7 @@ window.onload = (function() {
 
     console.log("FIGHT!!");                                             //shows function is working
 
+//Defining the Dom
 
     //Redefining players and making arrays
 
