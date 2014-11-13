@@ -1,5 +1,5 @@
 /**Jana Nash Siegle
- Nov 9, 2014
+ Nov 11, 2014
  PWA-1 1411-01
  O'Loughlin**/
 
@@ -8,12 +8,12 @@
     console.log("are we starting?");																	//with a specific scope
     // Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)				//var to get results of search
     var resultsDIV = document.getElementById("results"),						//var to retrieve input from searchform
-        searchInput = document.forms[0].search,
+        searchInput = document.forms[0].search,                                 //var for searchInput
         currentSearch = ''														//var for current search
         ;																			//end of setting three vars
 
     // Validates search query
-    var validate = function(query){					//fixed err == to = )& this creates a var function 4 query
+    var validate = function(query){					//fixed err == to = ) & this creates a var function for query...
        																				//after user inputs term(s)
         // Trim whitespace from start and end of search query
         while(query.charAt(0) === " "){						//fixed err of = to === empty space before user input/term?
@@ -36,11 +36,11 @@
     };																//end
 
     // Finds search matches //error somewhere in here preventing code from running
-    var search = function(query){	//fixed error of no opening FN bracket		//creating var FN for search query
-           //putting in place section checks
-        // split the user's search query string into an array
-        var queryArray = query.split(" ");										//taking users input and making keywords
-        // into an array ;  err split fixed to join
+    var search = function(query){	//fixed error of no opening FN bracket		//creating var FN for search query...
+                                                                                //putting in place section checks
+          // split the user's search query string into an array
+        var queryArray = query.split(" ");									//taking users input and making keywords...
+                                                                            // into an array ;  err split fixed to join
         console.log("queryArray: ", queryArray);								//test to see if queryArray has value
         // array to store matched results from database.js
         var results = [];                                       			//store array to match up against db
@@ -60,8 +60,8 @@
             // save a lowercase variable of the search keyword
             for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {  // the search string input by user
                 var qitem = queryArray[ii].toLowerCase();			//and we'll save each one into a lowercase variable
-                //fixed syntax of to
-                //	tolowercase to toLowerCase()
+                                                                    //err fixed syntax of tolowercase to toLowerCase()
+
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
@@ -76,14 +76,14 @@
         console.log("a I seeing the correct results number?" , results.length);
 
         // Check that matches were found, and run output functions
-        if(results.length === 0){				//ERR fix of = to ===let's check our matches array; changed assignment to equality
+        if(results.length === 0){				//err fix of = to ===let's check our matches array; changed assignment to equality
             noMatch();									//if none, awwww.. I wanted to play, I'm bored.
-        }else{											//but if there are matches??????
+        }else{											//but if there are matches?????? end of if
             showMatches(results);						//yay!!  let's show matches
-        };
-        //more unnecessary colons...semi-colons but let's not be lazy
-    };													//more semi's down the pike!!!  should save on gas and stay home
-    //but better safe than sorry!
+        };                                              //end of else
+
+    };													//end of function
+
     // Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
     var noMatch = function(){					//psst..if there's no match this is what we're gonna do..listen close
         var html = ''+							//writing html with javascript?  wow, amazing huh?!!!
@@ -99,12 +99,12 @@
         // THE NEXT 4 LINES ARE CORRECT.
         var html = '<p>Results</p>',      //more of that amazing javascript writing html...is someone confused?
             title,							//nawwwww jack of all trades I am!!  my name is...
-            url								//here's my address
-            ;
+            url								//here's link address
+            ;                               //end of vars
 
         // loop through all the results search() function
         for(var i=0, j=results.length; i<j; i++){				//loop for results search, two vars i and j
-        console.log("is my FOR loop working?");
+        console.log("is my FOR loop working?");                 //check that FOR loop is working
             // title of video ends with pipe
             // pull the title's string using index numbers
             titleEnd = results[i].indexOf('|');				//let's get our info using the indexes, I'm tired
@@ -115,7 +115,7 @@
                                                                                         //of subString to substring
             // make the video link - THE NEXT LINE IS CORRECT.
             html += '<p><a href=' + url + '>' + title + '</a></p>';				//jeez, will it never end, now linking?
-        };																		//some things are just necessary
+        };																		//end of for loop
         resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.					//more placement
     };																			//end results FN
 
@@ -130,4 +130,4 @@
         return false;															//cancels default behavior, stops
     };						//fixed err added closing bracket to semi colon				//link from being followed
 
-})();
+})();                                                                                //end program
