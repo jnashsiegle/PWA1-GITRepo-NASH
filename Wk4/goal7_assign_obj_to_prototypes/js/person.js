@@ -30,16 +30,17 @@ window.Person = Person;    //Adding the person object to the global window for m
 
 
 
-    /* Person.prototype.update = function(){
+     Person.prototype.update = function(){
 
         if(Math.floor[Math.random()] <.01){
 
-            var i  = Math.floor[Math.random() * Person.actions.length];
-            this.action = Person.actions[i];
+            var i  = Math.floor[Math.random() * actions.length];
+            this.action = actions[i];
+            var id = document.getElementById("r" + this.row + "c3");
             id.innerHTML = this.action;
         }
     }
-*/
+
 
 
 
