@@ -10,7 +10,7 @@
     var numPeople = 3;                                  //how many people to be displayed
     var people= [];                                     //var to hold the new person to be cycled in
     var names = ["Lisa", "Kay", "John", "Tony", "Mike", "Frances", "Clyde"];  //Names for our people
-    var myVar = "interval";                                       // var to call the timing
+    var interval;                                       // var to call the timing
 
     for (var i = 0; i < numPeople; i++) {               //FOR loop to cycle through names
 
@@ -32,21 +32,20 @@
             id.innerHTML = (field);
 
         }
-    clearInterval(myVar);                    //one at a time and clear it out on renew
-
-        interval = setInterval(runUpdate(), 1000/30);  //setting interval to 30; will continue to run til clear is called
-                                                    //or we shut window ; ID value is for interval parameter for clear
-
-
+        interval = setInterval(function(){runUpdate()}, 1000);  //setting interval to 30; will continue to run til clear is called
+                                                                      //or we shut window ; ID value is for interval parameter for clear
+        //clearInterval(myInterval);                                      //one at a time and clear it out on renew
 
 
         function runUpdate(){
-            person.forEach(function(Person){
-                console.log(name);
+		
+            // person.forEach(function(){
+			for (p=0; p<=5; p++){
+                console.log(people[p].action);
                 //element = the people in the array
                 //.update = the prototype method in the person.js file
-                Person.prototype.update();
-            });
+                Person.prototype.update(people[p]);
+            };
         }
 
 
