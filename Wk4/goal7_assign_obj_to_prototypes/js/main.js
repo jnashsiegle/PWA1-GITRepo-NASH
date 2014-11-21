@@ -22,29 +22,29 @@
         populateHTML(person.job, "r" + ( i + 1) + "c2");       //call to populate person's job and where on HTML
 
 
-        people.push(person);
-        names.splice(personIndex, 1);
+        people.push(person);                        //adding new person to the array
+        names.splice(personIndex, 1);               //removes person from the array
     }
 
-        function populateHTML (field, data){
+        function populateHTML (field, data){            //Here is the "template" how we populate the page
 
             var id = document.getElementById(data);
             id.innerHTML = (field);
 
         }
-        interval = setInterval(function(){runUpdate()}, 1000);  //setting interval to 30; will continue to run til clear is called
+        interval = setInterval(function(){runUpdate()}, 1000/30);  //setting interval to 30; will continue to run til clear is called
                                                                       //or we shut window ; ID value is for interval parameter for clear
         //clearInterval(myInterval);                                      //one at a time and clear it out on renew
 
 
         function runUpdate(){
 		
-            // person.forEach(function(){
-			for (p=0; p<=5; p++){
+            // person.forEach(function(){                           //this is the call to run the update from person.js
+			for (p=0; p<=(numPeople-1); p++){                       //loop through people array
                 console.log(people[p].action);
                 //element = the people in the array
                 //.update = the prototype method in the person.js file
-                Person.prototype.update(people[p]);
+                Person.prototype.update(people[p]);                 //update the people and actions
             };
         }
 
